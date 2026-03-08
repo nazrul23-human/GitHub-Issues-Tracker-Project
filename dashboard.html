@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>GitHub Issues Tracker</title>
-    <!-- font -->
+    <!-- font awesome-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
@@ -83,6 +83,32 @@
 
         </div>
 
+    </div>
+
+
+    <!-- Loader -->
+
+    <div id="loader" class="flex justify-center mt-10 hidden">
+        <div class="animate-spin rounded-full h-10 w-10 border-4 border-purple-600 border-t-transparent"></div>
+    </div>
+
+    <!-- Issue Cards -->
+     <div id="issuesContainer" class="max-w-7xl mx-auto mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5"></div>
+
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 hidden bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-6 rounded w-96">
+            <img src="./assets/Open-Status.png" alt="">
+            <h2 id="modalTitle" class="text-lg font-semibold"></h2>
+            <p id="modalDesc" class="text-sm text-gray-600 mt-2"></p>
+            <p id="modalAuthor" class="text-sm mt-3"></p>
+            <p id="modalPriority" class="text-sm"></p>
+            <p id="modalStatus" class="text-sm"></p>
+            <button onclick="closeModal()" class="mt-4 bg-purple-600 text-white px-4 py-2 rounded">
+                Close
+            </button>
+        </div>
     </div>
 
     <script src="script.js"></script>
