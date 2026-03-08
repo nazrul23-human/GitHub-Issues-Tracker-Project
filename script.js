@@ -66,16 +66,16 @@ function showAll() {
 
 function setActive(tab) {
     document.querySelectorAll(".tab").forEach(btn => {
-        btn.classList.remove("bg-purple-600", "text-white")
+        btn.classList.remove("bg-indigo-600", "text-white")
         btn.classList.add("border")
     })
-    document.getElementById(tab + "Tab").classList.add("bg-purple-600", "text-white")
+    document.getElementById(tab + "Tab").classList.add("bg-indigo-600", "text-white")
 }
 
 async function searchIssues() {
     let text = document.getElementById("searchInput").value
     showLoader()
-    let res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`)
+    let res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`)
     let data = await res.json()
     displayIssues(data.data)
     hideLoader()
@@ -99,7 +99,7 @@ function openModal(id) {
     document.getElementById("modalAuthor").innerText = "Author: " + issue.author
     document.getElementById("modalPriority").innerText = "Priority: " + issue.priority
     document.getElementById("modalStatus").innerText = "Status: " + issue.status
-    
+
     document.getElementById("modal").classList.remove("hidden")
 
 }
