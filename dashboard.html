@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>GitHub Issues Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- navbar -->
+
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+
+            <div class="flex items-center gap-2">
+                <img src="../assets/github-logo.png" class="w-8">
+                <h1 class="font-semibold text-lg">GitHub Issues Tracker</h1>
+            </div>
+
+            <div class="flex gap-2">
+                <input id="searchInput" placeholder="Search issues..." class="border px-3 py-2 rounded">
+
+                <button onclick="searchIssues()" class="bg-indigo-600 text-white px-4 rounded">
+                    + New Issue
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- tabs -->
+
+    <div class="max-w-7xl mx-auto mt-6">
+
+        <div class="bg-white p-4 rounded shadow flex gap-3">
+
+            <button id="allTab" onclick="showAll()" class="tab bg-indigo-600 text-white px-4 py-1 rounded">
+                All
+            </button>
+
+            <button id="openTab" onclick="filterIssues('open')" class="tab border px-4 py-1 rounded">
+                Open
+            </button>
+
+            <button id="closedTab" onclick="filterIssues('closed')" class="tab border px-4 py-1 rounded">
+                Closed
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- issue count -->
+
+    <div class="max-w-7xl mx-auto mt-4 flex justify-between items-center">
+
+        <div class="flex items-center gap-2">
+
+            <div class="bg-purple-200 p-2 rounded-full">
+                <img src="./assets/Aperture.png" alt="">
+            </div>
+
+            <div>
+                <p class="font-semibold">
+                    <span id="issueCount">0</span> Issues
+                </p>
+                <p class="text-sm text-gray-500">
+                    Track and manage your project issues
+                </p>
+            </div>
+
+        </div>
+
+        <div class="flex gap-4 text-sm">
+
+            <span class="text-green-600">● Open</span>
+            <span class="text-purple-600">● Closed</span>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
