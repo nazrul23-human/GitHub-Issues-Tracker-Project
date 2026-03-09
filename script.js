@@ -38,7 +38,7 @@ function displayIssues(issues) {
             : "border-purple-500"
 
         container.innerHTML += `
-        <div onclick="openModal('${issue._id}')"
+        <div onclick="openModal('${issue.id}')"
             class="bg-white rounded shadow p-4 border-t-4 ${border} cursor-pointer">
             <h3 class="font-semibold text-sm">${issue.title}</h3>
             <p class="text-xs text-gray-500 mt-1">${issue.description}</p>
@@ -74,9 +74,11 @@ function setActive(tab) {
 
 async function searchIssues() {
     let text = document.getElementById("searchInput").value
+    
     showLoader()
-    let res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`)
+    let res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`)
     let data = await res.json()
+    console.log (data.data)
     displayIssues(data.data)
     hideLoader()
 
@@ -93,8 +95,10 @@ function hideLoader() {
 
 
 function openModal(id) {
-    let issue = allIssues.find(i => i._id === id)
+    let issue = allIssues.find(i => i.id === Number(id))
+    
     document.getElementById("modalTitle").innerText = issue.title
+
     document.getElementById("modalDesc").innerText = issue.description
     document.getElementById("modalAuthor").innerText = "Author: " + issue.author
     document.getElementById("modalPriority").innerText = "Priority: " + issue.priority
