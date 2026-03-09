@@ -1,4 +1,3 @@
-
 ##API Endpoints:
 
 #All Issues:
@@ -147,5 +146,5 @@ Example:
 >Old System:
 "Hello, " + name + "! You have " + messages + " new alert."
 >Template Literal System:
-JavaScript
-`Hello, ${name}! You have ${messages} new alert.`
+>JavaScript
+Hello, ${name}! You have ${messages} new alert.
